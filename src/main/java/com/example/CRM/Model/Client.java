@@ -1,6 +1,10 @@
 package com.example.CRM.Model;
 
 import jakarta.persistence.*;
+import org.w3c.dom.stylesheets.LinkStyle;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name="clients")
@@ -9,7 +13,8 @@ public class Client {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-
+//    @ManyToMany
+//    List<Client> clients = new ArrayList<>();
 
     @Column(name = "company_name")
     private String entreprise;
@@ -19,20 +24,23 @@ public class Client {
     private String prenom;
     private String email;
     @Column(name = "phone")
-    private Integer telephone;
+    private String telephone;
     @Column(name = "address")
     private String adresse;
     @Column(name = "zip_code")
-    private Integer codepostal;
+    private String codepostal;
     @Column(name = "city")
     private String ville;
     @Column(name = "country")
     private String pays;
+    @Column(name = "state")
+    private Integer etat;
+
 
     public Client() {
     }
 
-    public Client(String entreprise, String nom, String prenom, String email, Integer telephone, String adresse, Integer codepostal, String ville, String pays) {
+    public Client(String entreprise, String nom, String prenom, String email, String telephone, String adresse, String codepostal, String ville, String pays, Integer etat) {
         this.entreprise = entreprise;
         this.nom = nom;
         this.prenom = prenom;
@@ -42,6 +50,7 @@ public class Client {
         this.codepostal = codepostal;
         this.ville = ville;
         this.pays = pays;
+        this.etat = etat;
     }
 
     public Integer getId() {
@@ -84,11 +93,11 @@ public class Client {
         this.email = email;
     }
 
-    public Integer getTelephone() {
+    public String getTelephone() {
         return telephone;
     }
 
-    public void setTelephone(Integer telephone) {
+    public void setTelephone(String telephone) {
         this.telephone = telephone;
     }
 
@@ -100,11 +109,11 @@ public class Client {
         this.adresse = adresse;
     }
 
-    public Integer getCodepostal() {
+    public String getCodepostal() {
         return codepostal;
     }
 
-    public void setCodepostal(Integer codepostal) {
+    public void setCodepostal(String codepostal) {
         this.codepostal = codepostal;
     }
 
@@ -124,19 +133,37 @@ public class Client {
         this.pays = pays;
     }
 
+//    public List<Client> getClients() {
+//        return clients;
+//    }
+//
+//    public void setClients(List<Client> clients) {
+//        this.clients = clients;
+//    }
+
+    public Integer getEtat() {
+        return etat;
+    }
+
+    public void setEtat(Integer etat) {
+        this.etat = etat;
+    }
+
     @Override
     public String toString() {
         return "Client{" +
                 "id=" + id +
+//                ", clients=" + clients +
                 ", entreprise='" + entreprise + '\'' +
                 ", nom='" + nom + '\'' +
                 ", prenom='" + prenom + '\'' +
                 ", email='" + email + '\'' +
-                ", telephone=" + telephone +
+                ", telephone='" + telephone + '\'' +
                 ", adresse='" + adresse + '\'' +
-                ", codepostal=" + codepostal +
+                ", codepostal='" + codepostal + '\'' +
                 ", ville='" + ville + '\'' +
                 ", pays='" + pays + '\'' +
+                ", etat=" + etat +
                 '}';
     }
 }

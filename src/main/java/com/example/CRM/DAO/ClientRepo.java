@@ -1,4 +1,4 @@
-package com.example.demo.dao;
+package com.example.CRM.DAO;
 
 import com.example.CRM.Model.Client;
 import org.springframework.data.jpa.repository.JpaRepository;

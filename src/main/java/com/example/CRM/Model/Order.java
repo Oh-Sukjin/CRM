@@ -13,24 +13,24 @@ public class Order {
     private String prestation;
     @Column(name = "designation")
     private String description;
-    @Column(name = "id_client")
+    @Column(name = "client_id")
     private Integer idclient;
 
     @Column(name = "nb_days")
-    private Integer nbjours;
+    private short nbjours;
     @Column(name = "unit_price")
-    private float prixunitaire;
-    @Column(name = "total_exclude_taxes")
-    private float totalHt;
-    @Column(name = "total_with_taxes")
-    private float totalTtc;
+    private Integer prixunitaire;
+    @Column(name = "total_exclude_taxe")
+    private Integer totalHt;
+    @Column(name = "total_with_taxe")
+    private Integer totalTtc;
     @Column(name = "state")
-    private Integer etat;
+    private short etat;
 
     public Order() {
     }
 
-    public Order(String prestation, String description, Integer idclient, Integer nbjours, float prixunitaire, float totalHt, float totalTtc, Integer etat) {
+    public Order(String prestation, String description, Integer idclient, short nbjours, Integer prixunitaire, Integer totalHt, Integer totalTtc, short etat) {
         this.prestation = prestation;
         this.description = description;
         this.idclient = idclient;
@@ -65,43 +65,43 @@ public class Order {
         this.idclient = idclient;
     }
 
-    public Integer getNbjours() {
+    public short getNbjours() {
         return nbjours;
     }
 
-    public void setNbjours(Integer nbjours) {
+    public void setNbjours(short nbjours) {
         this.nbjours = nbjours;
     }
 
-    public float getPrixunitaire() {
+    public Integer getPrixunitaire() {
         return prixunitaire;
     }
 
-    public void setPrixunitaire(float prixunitaire) {
+    public void setPrixunitaire(Integer prixunitaire) {
         this.prixunitaire = prixunitaire;
     }
 
-    public float getTotalHt() {
+    public Integer getTotalHt() {
         return totalHt;
     }
 
-    public void setTotalHt(float totalHt) {
+    public void setTotalHt(Integer totalHt) {
         this.totalHt = totalHt;
     }
 
-    public float getTotalTtc() {
+    public Integer getTotalTtc() {
         return totalTtc;
     }
 
-    public void setTotalTtc(float totalTtc) {
+    public void setTotalTtc(Integer totalTtc) {
         this.totalTtc = totalTtc;
     }
 
-    public Integer getEtat() {
+    public short getEtat() {
         return etat;
     }
 
-    public void setEtat(Integer etat) {
+    public void setEtat(short etat) {
         this.etat = etat;
     }
 
