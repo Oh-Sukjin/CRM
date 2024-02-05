@@ -51,6 +51,7 @@ public class ClientController {
             , @RequestBody Client c){
         // ATTENTION à l'ordre pour éviter le NullpointerException
 //        if(!id.equals(c.getId())) {
+        System.out.println(c + " - " + c.getId());
         if(!c.getId().equals(clientId)) {
             return ResponseEntity.badRequest().build();
         } else {
