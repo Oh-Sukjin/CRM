@@ -4,10 +4,11 @@ import jakarta.persistence.*;
 
 public class ClientDTO {
 
-//    private Integer id;
+    private Integer id;
 
 //    @ManyToMany
 //    List<Client> clients = new ArrayList<>();
+
 
     private String companyName;
     private String firstName;
@@ -34,6 +35,14 @@ public class ClientDTO {
         this.city = city;
         this.country = country;
         this.state = state;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getCompanyName() {

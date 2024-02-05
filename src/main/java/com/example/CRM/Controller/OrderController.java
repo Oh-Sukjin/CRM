@@ -56,7 +56,8 @@ public class OrderController {
     public ResponseEntity put(@PathVariable("id") Integer id
             , @RequestBody Order o){
         // ATTENTION à l'ordre pour éviter le NullpointerException
-        //  if(!id.equals(voiture.getId())) {
+//        if(!id.equals(o.getId())) {
+        System.out.println(o.getId());
         if(!o.getId().equals(id)) {
             return ResponseEntity.badRequest().build();
         } else {

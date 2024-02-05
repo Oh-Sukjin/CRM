@@ -33,8 +33,8 @@ public class ClientController {
     }
 
     @GetMapping("clients/{id}")
-    public ResponseEntity<Client> findById(@PathVariable("id") Integer voitureId){
-        Optional<Client> opt = clientService.findById(voitureId);
+    public ResponseEntity<Client> findById(@PathVariable("id") Integer clientId){
+        Optional<Client> opt = clientService.findById(clientId);
         if(opt.isEmpty())
             return ResponseEntity.notFound().build();
         else
@@ -47,13 +47,13 @@ public class ClientController {
     }
 
     @PutMapping("clients/{id}")
-    public ResponseEntity put(@PathVariable("id") Integer id
+    public ResponseEntity put(@PathVariable("id") Integer clientId
             , @RequestBody Client c){
         // ATTENTION à l'ordre pour éviter le NullpointerException
-        //  if(!id.equals(voiture.getId())) {
-        if(!c.getId().equals(id)) {
+//        if(!id.equals(c.getId())) {
+        if(!c.getId().equals(clientId)) {
             return ResponseEntity.badRequest().build();
-        } else {
+        } else {q
             clientService.update(c);
             return ResponseEntity.ok().build();
         }
