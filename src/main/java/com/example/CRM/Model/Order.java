@@ -13,15 +13,18 @@ public class Order {
     private String prestation;
     @Column(name = "designation")
     private String description;
-    @Column(name = "client_id")
-    private Integer idclient;
+//    @Column(name = "client_id")
+    @ManyToOne
+    private Client client;
 
     @Column(name = "nb_days")
     private short nbjours;
     @Column(name = "unit_price")
     private Integer prixunitaire;
+    @Transient
     @Column(name = "total_exclude_taxe")
     private Integer totalHt;
+    @Transient
     @Column(name = "total_with_taxe")
     private Integer totalTtc;
     @Column(name = "state")
@@ -30,10 +33,10 @@ public class Order {
     public Order() {
     }
 
-    public Order(String prestation, String description, Integer idclient, short nbjours, Integer prixunitaire, short etat) {
+    public Order(String prestation, String description, short nbjours, Integer prixunitaire, short etat) {
         this.prestation = prestation;
         this.description = description;
-        this.idclient = idclient;
+//        this./ = idclient;
         this.nbjours = nbjours;
         this.prixunitaire = prixunitaire;
         this.etat = etat;
@@ -48,6 +51,14 @@ public class Order {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public Client getClient() {
+        return client;
+    }
+
+    public void setClient(Client client) {
+        this.client = client;
     }
 
     public String getPrestation() {
@@ -66,13 +77,13 @@ public class Order {
         this.description = description;
     }
 
-    public Integer getIdclient() {
-        return idclient;
-    }
-
-    public void setIdclient(Integer idclient) {
-        this.idclient = idclient;
-    }
+//    public Integer getIdclient() {
+//        return idclient;
+//    }
+//
+//    public void setIdclient(Integer idclient) {
+//        this.idclient = idclient;
+//    }
 
     public short getNbjours() {
         return nbjours;
@@ -120,7 +131,7 @@ public class Order {
                 "id=" + id +
                 ", prestation='" + prestation + '\'' +
                 ", description='" + description + '\'' +
-                ", idclient=" + idclient +
+//                ", idclient=" + idclient +
                 ", nbjours=" + nbjours +
                 ", prixunitaire=" + prixunitaire +
                 ", totalHt=" + totalHt +

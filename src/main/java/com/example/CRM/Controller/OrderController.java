@@ -1,5 +1,6 @@
 package com.example.CRM.Controller;
 
+import com.example.CRM.Model.Client;
 import com.example.CRM.Model.Order;
 import com.example.CRM.Model.Order;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,10 +18,14 @@ public class OrderController {
     @Autowired
     OrderService orderService;
 
+    @Autowired
+    ClientService clientService;
+
     @GetMapping("commandes")
     public List<OrderDTO> findAll(){
         List<Order> models = orderService.findAll();
         List<OrderDTO> dtos = new ArrayList<>();
+        List<Client> clients = clientService.findAll();
         for(Order o : models){
             OrderDTO dto = OrderMapper.convertToDto(o);
             dtos.add(dto);

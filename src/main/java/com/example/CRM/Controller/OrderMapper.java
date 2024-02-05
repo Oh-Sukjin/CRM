@@ -9,7 +9,7 @@ public class OrderMapper {
         OrderDTO dto = new OrderDTO();
         dto.setTypePresta(o.getPrestation());
         dto.setDesignation(o.getDescription());
-        dto.setClientId(o.getIdclient());
+        dto.setClientId(o.getClient().getId());
         dto.setNbDays(o.getNbjours());
         dto.setUnitPrice(o.getPrixunitaire());
         dto.setTotalExcludeTaxe(o.getTotalHt());
