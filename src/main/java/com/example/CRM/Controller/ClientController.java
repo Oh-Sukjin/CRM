@@ -53,7 +53,7 @@ public class ClientController {
 //        if(!id.equals(c.getId())) {
         if(!c.getId().equals(clientId)) {
             return ResponseEntity.badRequest().build();
-        } else {q
+        } else {
             clientService.update(c);
             return ResponseEntity.ok().build();
         }
