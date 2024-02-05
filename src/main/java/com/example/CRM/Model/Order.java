@@ -10,40 +10,37 @@ public class Order {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     @Column(name = "type_presta")
-    private String prestation;
-    @Column(name = "designation")
-    private String description;
+    private String typePresta;
+//    @Column(name = "designation")
+    private String designation;
 //    @Column(name = "client_id")
     @ManyToOne
     private Client client;
 
     @Column(name = "nb_days")
-    private short nbjours;
+    private short nbDays;
     @Column(name = "unit_price")
-    private Integer prixunitaire;
+    private Integer UnitPrice;
     @Transient
     @Column(name = "total_exclude_taxe")
     private Integer totalHt;
     @Transient
     @Column(name = "total_with_taxe")
     private Integer totalTtc;
-    @Column(name = "state")
-    private short etat;
+//    @Column(name = "")
+    private short state;
 
     public Order() {
     }
 
-    public Order(String prestation, String description, short nbjours, Integer prixunitaire, short etat) {
-        this.prestation = prestation;
-        this.description = description;
-//        this./ = idclient;
-        this.nbjours = nbjours;
-        this.prixunitaire = prixunitaire;
-        this.etat = etat;
-//        this.totalHt = totalHt;
-//        this.totalTtc = totalTtc;
+    public Order(String typePresta, String designation, Client client, short nbDays, Integer unitPrice, short state) {
+        this.typePresta = typePresta;
+        this.designation = designation;
+        this.client = client;
+        this.nbDays = nbDays;
+        UnitPrice = unitPrice;
+        this.state = state;
     }
-
 
     public Integer getId() {
         return id;
@@ -51,6 +48,22 @@ public class Order {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public String getTypePresta() {
+        return typePresta;
+    }
+
+    public void setTypePresta(String typePresta) {
+        this.typePresta = typePresta;
+    }
+
+    public String getDesignation() {
+        return designation;
+    }
+
+    public void setDesignation(String designation) {
+        this.designation = designation;
     }
 
     public Client getClient() {
@@ -61,44 +74,20 @@ public class Order {
         this.client = client;
     }
 
-    public String getPrestation() {
-        return prestation;
+    public short getNbDays() {
+        return nbDays;
     }
 
-    public void setPrestation(String prestation) {
-        this.prestation = prestation;
+    public void setNbDays(short nbDays) {
+        this.nbDays = nbDays;
     }
 
-    public String getDescription() {
-        return description;
+    public Integer getUnitPrice() {
+        return UnitPrice;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-//    public Integer getIdclient() {
-//        return idclient;
-//    }
-//
-//    public void setIdclient(Integer idclient) {
-//        this.idclient = idclient;
-//    }
-
-    public short getNbjours() {
-        return nbjours;
-    }
-
-    public void setNbjours(short nbjours) {
-        this.nbjours = nbjours;
-    }
-
-    public Integer getPrixunitaire() {
-        return prixunitaire;
-    }
-
-    public void setPrixunitaire(Integer prixunitaire) {
-        this.prixunitaire = prixunitaire;
+    public void setUnitPrice(Integer unitPrice) {
+        UnitPrice = unitPrice;
     }
 
     public Integer getTotalHt() {
@@ -117,26 +106,26 @@ public class Order {
         this.totalTtc = totalTtc;
     }
 
-    public short getEtat() {
-        return etat;
+    public short getState() {
+        return state;
     }
 
-    public void setEtat(short etat) {
-        this.etat = etat;
+    public void setState(short state) {
+        this.state = state;
     }
 
     @Override
     public String toString() {
         return "Order{" +
                 "id=" + id +
-                ", prestation='" + prestation + '\'' +
-                ", description='" + description + '\'' +
-//                ", idclient=" + idclient +
-                ", nbjours=" + nbjours +
-                ", prixunitaire=" + prixunitaire +
+                ", typePresta='" + typePresta + '\'' +
+                ", designation='" + designation + '\'' +
+                ", client=" + client +
+                ", nbDays=" + nbDays +
+                ", UnitPrice=" + UnitPrice +
                 ", totalHt=" + totalHt +
                 ", totalTtc=" + totalTtc +
-                ", etat=" + etat +
+                ", state=" + state +
                 '}';
     }
 }
