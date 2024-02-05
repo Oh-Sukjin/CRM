@@ -9,65 +9,55 @@ public class ClientDTO {
 //    @ManyToMany
 //    List<Client> clients = new ArrayList<>();
 
-    @Column(name = "")
-    private String company_name;
-    @Column(name = "")
-    private String first_name;
-    @Column(name = "")
-    private String last_name;
+    private String companyName;
+    private String firstName;
+    private String lastName;
     private String email;
-    @Column(name = "phone")
     private String phone;
-    @Column(name = "")
     private String address;
-    @Column(name = "")
-    private String zip_code;
-    @Column(name = "")
+    private String zipCode;
     private String city;
-    @Column(name = "")
     private String country;
-    @Column(name = "")
     private Integer state;
-
 
     public ClientDTO() {
     }
 
-    public ClientDTO(String company_name, String first_name, String last_name, String email, String phone, String address, String zip_code, String city, String country, Integer state) {
-        this.company_name = company_name;
-        this.first_name = first_name;
-        this.last_name = last_name;
+    public ClientDTO(String companyName, String firstName, String lastName, String email, String phone, String address, String zipCode, String city, String country, Integer state) {
+        this.companyName = companyName;
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.email = email;
         this.phone = phone;
         this.address = address;
-        this.zip_code = zip_code;
+        this.zipCode = zipCode;
         this.city = city;
         this.country = country;
         this.state = state;
     }
 
-    public String getCompany_name() {
-        return company_name;
+    public String getCompanyName() {
+        return companyName;
     }
 
-    public void setCompany_name(String company_name) {
-        this.company_name = company_name;
+    public void setCompanyName(String companyName) {
+        this.companyName = companyName;
     }
 
-    public String getFirst_name() {
-        return first_name;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setFirst_name(String first_name) {
-        this.first_name = first_name;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
-    public String getLast_name() {
-        return last_name;
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setLast_name(String last_name) {
-        this.last_name = last_name;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public String getEmail() {
@@ -94,12 +84,12 @@ public class ClientDTO {
         this.address = address;
     }
 
-    public String getZip_code() {
-        return zip_code;
+    public String getZipCode() {
+        return zipCode;
     }
 
-    public void setZip_code(String zip_code) {
-        this.zip_code = zip_code;
+    public void setZipCode(String zipCode) {
+        this.zipCode = zipCode;
     }
 
     public String getCity() {
@@ -129,13 +119,13 @@ public class ClientDTO {
     @Override
     public String toString() {
         return "ClientDTO{" +
-                "company_name='" + company_name + '\'' +
-                ", first_name='" + first_name + '\'' +
-                ", last_name='" + last_name + '\'' +
+                "companyName='" + companyName + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
                 ", email='" + email + '\'' +
                 ", phone='" + phone + '\'' +
                 ", address='" + address + '\'' +
-                ", zip_code='" + zip_code + '\'' +
+                ", zipCode='" + zipCode + '\'' +
                 ", city='" + city + '\'' +
                 ", country='" + country + '\'' +
                 ", state=" + state +

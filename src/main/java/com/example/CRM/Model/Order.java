@@ -30,15 +30,24 @@ public class Order {
     public Order() {
     }
 
-    public Order(String prestation, String description, Integer idclient, short nbjours, Integer prixunitaire, Integer totalHt, Integer totalTtc, short etat) {
+    public Order(String prestation, String description, Integer idclient, short nbjours, Integer prixunitaire, short etat) {
         this.prestation = prestation;
         this.description = description;
         this.idclient = idclient;
         this.nbjours = nbjours;
         this.prixunitaire = prixunitaire;
-        this.totalHt = totalHt;
-        this.totalTtc = totalTtc;
         this.etat = etat;
+//        this.totalHt = totalHt;
+//        this.totalTtc = totalTtc;
+    }
+
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getPrestation() {

@@ -12,13 +12,13 @@ public class ClientMapper {
 
     public static ClientDTO convertToDto(Client client){
         ClientDTO dto = new ClientDTO();
-        dto.setCompany_name(client.getEntreprise());
-        dto.setFirst_name(client.getNom());
-        dto.setLast_name(client.getPrenom());
+        dto.setCompanyName(client.getEntreprise());
+        dto.setFirstName(client.getNom());
+        dto.setLastName(client.getPrenom());
         dto.setEmail(client.getEmail());
         dto.setPhone(client.getTelephone());
         dto.setAddress(client.getAdresse());
-        dto.setZip_code(client.getCodepostal());
+        dto.setZipCode(client.getCodepostal());
         dto.setCity(client.getVille());
         dto.setCountry(client.getPays());
         dto.setState(client.getEtat());
