@@ -25,7 +25,6 @@ public class OrderController {
     public List<OrderDTO> findAll(){
         List<Order> models = orderService.findAll();
         List<OrderDTO> dtos = new ArrayList<>();
-        List<Client> clients = clientService.findAll();
         for(Order o : models){
             OrderDTO dto = OrderMapper.convertToDto(o);
             dtos.add(dto);

@@ -16,8 +16,8 @@ public class OrderMapper {
         dto.setClientId(o.getId());
         dto.setNbJours(o.getNbDays());
         dto.setPrixUnitaire(o.getUnitPrice());
-        dto.setTotalHT(o.getTotalHt());
-        dto.setTotalTTC(o.getTotalTtc());
+        dto.setTotalHT(o.getNbDays()*o.getUnitPrice());
+        dto.setTotalTTC((o.getTotalTtc()));
 
         return dto;
     }

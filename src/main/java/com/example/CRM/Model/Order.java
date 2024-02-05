@@ -25,7 +25,7 @@ public class Order {
     @Transient
     @Column(name = "total_exclude_taxe")
     private Integer totalHt;
-//    @Transient
+    @Transient
     @Column(name = "total_with_taxe")
     private Integer totalTtc;
 //    @Column(name = "")
