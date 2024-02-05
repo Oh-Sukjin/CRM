@@ -1,5 +1,6 @@
 package com.example.CRM.Model;
 
+import com.example.CRM.Controller.OrderState;
 import jakarta.persistence.*;
 
 @Entity
@@ -9,7 +10,7 @@ public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    @Column(name = "type_presta")
+//    @Column(name = "type_presta")
     private String typePresta;
 //    @Column(name = "designation")
     private String designation;
@@ -19,26 +20,28 @@ public class Order {
 
     @Column(name = "nb_days")
     private short nbDays;
-    @Column(name = "unit_price")
-    private Integer UnitPrice;
+//    @Column(name = "unit_price")
+    private Integer unitPrice;
     @Transient
     @Column(name = "total_exclude_taxe")
     private Integer totalHt;
-    @Transient
+//    @Transient
     @Column(name = "total_with_taxe")
     private Integer totalTtc;
 //    @Column(name = "")
-    private short state;
+
+@Column(columnDefinition = "int4")
+private OrderState state;
 
     public Order() {
     }
 
-    public Order(String typePresta, String designation, Client client, short nbDays, Integer unitPrice, short state) {
+    public Order(String typePresta, String designation, Client client, short nbDays, Integer unitPrice, OrderState state) {
         this.typePresta = typePresta;
         this.designation = designation;
         this.client = client;
         this.nbDays = nbDays;
-        UnitPrice = unitPrice;
+        this.unitPrice = unitPrice;
         this.state = state;
     }
 
@@ -83,12 +86,11 @@ public class Order {
     }
 
     public Integer getUnitPrice() {
-        return UnitPrice;
+        return unitPrice;
     }
 
     public void setUnitPrice(Integer unitPrice) {
-        UnitPrice = unitPrice;
-    }
+        this.unitPrice = unitPrice;   }
 
     public Integer getTotalHt() {
         return totalHt;
@@ -106,11 +108,11 @@ public class Order {
         this.totalTtc = totalTtc;
     }
 
-    public short getState() {
+    public OrderState getState() {
         return state;
     }
 
-    public void setState(short state) {
+    public void setState(OrderState state) {
         this.state = state;
     }
 
@@ -122,7 +124,7 @@ public class Order {
                 ", designation='" + designation + '\'' +
                 ", client=" + client +
                 ", nbDays=" + nbDays +
-                ", UnitPrice=" + UnitPrice +
+                ", unitPrice=" + unitPrice +
                 ", totalHt=" + totalHt +
                 ", totalTtc=" + totalTtc +
                 ", state=" + state +

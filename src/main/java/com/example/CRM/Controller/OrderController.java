@@ -57,7 +57,6 @@ public class OrderController {
             , @RequestBody Order o){
         // ATTENTION à l'ordre pour éviter le NullpointerException
 //        if(!id.equals(o.getId())) {
-        System.out.println(o.getId());
         if(!o.getId().equals(id)) {
             return ResponseEntity.badRequest().build();
         } else {

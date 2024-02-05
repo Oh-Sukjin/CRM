@@ -19,12 +19,12 @@ public class ClientDTO {
     private String zipCode;
     private String city;
     private String country;
-    private Integer state;
+    private ClientState state;
 
     public ClientDTO() {
     }
 
-    public ClientDTO(String companyName, String firstName, String lastName, String email, String phone, String address, String zipCode, String city, String country, Integer state) {
+    public ClientDTO(String companyName, String firstName, String lastName, String email, String phone, String address, String zipCode, String city, String country, ClientState state) {
         this.companyName = companyName;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -117,11 +117,11 @@ public class ClientDTO {
         this.country = country;
     }
 
-    public Integer getState() {
+    public ClientState getState() {
         return state;
     }
 
-    public void setState(Integer state) {
+    public void setState(ClientState state) {
         this.state = state;
     }
 

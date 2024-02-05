@@ -1,5 +1,6 @@
 package com.example.CRM.Model;
 
+import com.example.CRM.Controller.ClientState;
 import jakarta.persistence.*;
 import org.w3c.dom.stylesheets.LinkStyle;
 
@@ -33,14 +34,14 @@ public class Client {
     private String ville;
     @Column(name = "country")
     private String pays;
-    @Column(name = "state")
-    private Integer etat;
+    @Column(name = "state",columnDefinition = "int4")
+    private ClientState etat;
 
 
     public Client() {
     }
 
-    public Client(String entreprise, String nom, String prenom, String email, String telephone, String adresse, String codepostal, String ville, String pays, Integer etat) {
+    public Client(String entreprise, String nom, String prenom, String email, String telephone, String adresse, String codepostal, String ville, String pays, ClientState etat) {
         this.entreprise = entreprise;
         this.nom = nom;
         this.prenom = prenom;
@@ -141,11 +142,11 @@ public class Client {
 //        this.clients = clients;
 //    }
 
-    public Integer getEtat() {
+    public ClientState getEtat() {
         return etat;
     }
 
-    public void setEtat(Integer etat) {
+    public void setEtat(ClientState etat) {
         this.etat = etat;
     }
 

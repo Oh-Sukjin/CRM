@@ -8,26 +8,24 @@ public class OrderDTO {
 
 //    @ManyToMany
 //    List<Client> clients = new ArrayList<>();
-    private String typePresta;
-    private String designation;
+    private String typePrestation;
+    private String description;
     private Integer clientId;
-    private short nbDays;
-    private Integer unitPrice;
-    private Integer totalExcludeTaxe;
-    private Integer totalWithTaxe;
-    private short etat;
+    private short nbJours;
+    private Integer prixUnitaire;
+    private Integer totalHT;
+    private Integer totalTTC;
+    private OrderState etat;
 
     public OrderDTO() {
     }
 
-    public OrderDTO(String typePresta, String designation, Integer clientId, short nbDays, Integer unitPrice, short etat) {
-        this.typePresta = typePresta;
-        this.designation = designation;
+    public OrderDTO(String typePrestation, String description, Integer clientId, short nbJours, Integer prixUnitaire, OrderState etat) {
+        this.typePrestation = typePrestation;
+        this.description = description;
         this.clientId = clientId;
-        this.nbDays = nbDays;
-        this.unitPrice = unitPrice;
-//        this.totalExcludeTaxe = totalExcludeTaxe;
-//        this.totalWithTaxe = totalWithTaxe;
+        this.nbJours = nbJours;
+        this.prixUnitaire = prixUnitaire;
         this.etat = etat;
     }
 
@@ -35,24 +33,24 @@ public class OrderDTO {
         return id;
     }
 
-//    public void setId(Integer id) {
-//        this.id = id;
-//    }
-
-    public String getTypePresta() {
-        return typePresta;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
-    public void setTypePresta(String typePresta) {
-        this.typePresta = typePresta;
+    public String getTypePrestation() {
+        return typePrestation;
     }
 
-    public String getDesignation() {
-        return designation;
+    public void setTypePrestation(String typePrestation) {
+        this.typePrestation = typePrestation;
     }
 
-    public void setDesignation(String designation) {
-        this.designation = designation;
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public Integer getClientId() {
@@ -63,43 +61,43 @@ public class OrderDTO {
         this.clientId = clientId;
     }
 
-    public short getNbDays() {
-        return nbDays;
+    public short getNbJours() {
+        return nbJours;
     }
 
-    public void setNbDays(short nbDays) {
-        this.nbDays = nbDays;
+    public void setNbJours(short nbJours) {
+        this.nbJours = nbJours;
     }
 
-    public Integer getUnitPrice() {
-        return unitPrice;
+    public Integer getPrixUnitaire() {
+        return prixUnitaire;
     }
 
-    public void setUnitPrice(Integer unitPrice) {
-        this.unitPrice = unitPrice;
+    public void setPrixUnitaire(Integer prixUnitaire) {
+        this.prixUnitaire = prixUnitaire;
     }
 
-    public Integer getTotalExcludeTaxe() {
-        return totalExcludeTaxe;
+    public Integer getTotalHT() {
+        return totalHT;
     }
 
-    public void setTotalExcludeTaxe(Integer totalExcludeTaxe) {
-        this.totalExcludeTaxe = totalExcludeTaxe;
+    public void setTotalHT(Integer totalHT) {
+        this.totalHT = totalHT;
     }
 
-    public Integer getTotalWithTaxe() {
-        return totalWithTaxe;
+    public Integer getTotalTTC() {
+        return totalTTC;
     }
 
-    public void setTotalWithTaxe(Integer totalWithTaxe) {
-        this.totalWithTaxe = totalWithTaxe;
+    public void setTotalTTC(Integer totalTTC) {
+        this.totalTTC = totalTTC;
     }
 
-    public short getEtat() {
+    public OrderState getEtat() {
         return etat;
     }
 
-    public void setEtat(short etat) {
+    public void setEtat(OrderState etat) {
         this.etat = etat;
     }
 
@@ -107,13 +105,13 @@ public class OrderDTO {
     public String toString() {
         return "OrderDTO{" +
                 "id=" + id +
-                ", typePresta='" + typePresta + '\'' +
-                ", designation='" + designation + '\'' +
+                ", typePrestation='" + typePrestation + '\'' +
+                ", description='" + description + '\'' +
                 ", clientId=" + clientId +
-                ", nbDays=" + nbDays +
-                ", unitPrice=" + unitPrice +
-                ", totalExcludeTaxe=" + totalExcludeTaxe +
-                ", totalWithTaxe=" + totalWithTaxe +
+                ", nbJours=" + nbJours +
+                ", prixUnitaire=" + prixUnitaire +
+                ", totalHT=" + totalHT +
+                ", totalTTC=" + totalTTC +
                 ", etat=" + etat +
                 '}';
     }
