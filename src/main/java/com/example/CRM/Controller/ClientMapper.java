@@ -12,6 +12,7 @@ public class ClientMapper {
 
     public static ClientDTO convertToDto(Client client){
         ClientDTO dto = new ClientDTO();
+        dto.setId(client.getId());
         dto.setCompanyName(client.getEntreprise());
         dto.setFirstName(client.getNom());
         dto.setLastName(client.getPrenom());

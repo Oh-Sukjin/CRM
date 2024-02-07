@@ -7,6 +7,9 @@ import jakarta.persistence.*;
 @Table(name = "orders")
 public class Order {
 
+    @ManyToOne
+    private Client client;
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
@@ -15,8 +18,7 @@ public class Order {
 //    @Column(name = "designation")
     private String designation;
 //    @Column(name = "client_id")
-    @ManyToOne
-    private Client client;
+
 
     @Column(name = "nb_days")
     private short nbDays;
@@ -30,7 +32,7 @@ public class Order {
     private Integer totalTtc;
 //    @Column(name = "")
 
-@Column(columnDefinition = "int4")
+@Column(columnDefinition = "int4") // lié à un probleme de conversion SMALLINT vers INTEGER
 private OrderState state;
 
     public Order() {

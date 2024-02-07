@@ -6,10 +6,6 @@ public class ClientDTO {
 
     private Integer id;
 
-//    @ManyToMany
-//    List<Client> clients = new ArrayList<>();
-
-
     private String companyName;
     private String firstName;
     private String lastName;

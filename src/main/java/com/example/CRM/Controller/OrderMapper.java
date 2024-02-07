@@ -9,37 +9,19 @@ public class OrderMapper {
 
 
     public static OrderDTO convertToDto(Order o){
-        String state = "";
+
         OrderDTO dto = new OrderDTO();
+//        Client c = new Client();
+        dto.setId(o.getId());
         dto.setTypePrestation(o.getTypePresta());
         dto.setDescription(o.getDesignation());
-        dto.setClientId(o.getId());
+        dto.setClient(o.getId());
+//        dto.setClient(c);
         dto.setNbJours(o.getNbDays());
         dto.setPrixUnitaire(o.getUnitPrice());
         dto.setTotalHT(o.getNbDays()*o.getUnitPrice());
-        dto.setTotalTTC((o.getTotalTtc()));
-
+        dto.setTotalTTC(((int)(o.getNbDays()*o.getUnitPrice()*1.2)));
+        dto.setEtat(o.getState());
         return dto;
     }
-
-    public static Order convertToEntity(OrderDTO o){
-        Order entity = new Order();
-        Client c = new Client();
-        entity.setDesignation(o.getDescription());
-        entity.setClient(c);
-        entity.setNbDays(o.getNbJours());
-        entity.setUnitPrice(o.getPrixUnitaire());
-        entity.setTotalHt(o.getTotalHT());
-        entity.setTotalTtc(o.getTotalTTC());
-        entity.setState(o.getEtat());
-        return entity;
-
-
-
-
-    }
-
-
-
-
 }

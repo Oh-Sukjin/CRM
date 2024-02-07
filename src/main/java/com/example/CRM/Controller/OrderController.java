@@ -18,14 +18,11 @@ public class OrderController {
     @Autowired
     OrderService orderService;
 
-    @Autowired
-    ClientService clientService;
-
     @GetMapping("commandes")
     public List<OrderDTO> findAll(){
-        List<Order> models = orderService.findAll();
+        List<Order> orders = orderService.findAll();
         List<OrderDTO> dtos = new ArrayList<>();
-        for(Order o : models){
+        for(Order o : orders){
             OrderDTO dto = OrderMapper.convertToDto(o);
             dtos.add(dto);
         }

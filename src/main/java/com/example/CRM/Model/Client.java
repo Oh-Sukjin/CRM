@@ -134,14 +134,6 @@ public class Client {
         this.pays = pays;
     }
 
-//    public List<Client> getClients() {
-//        return clients;
-//    }
-//
-//    public void setClients(List<Client> clients) {
-//        this.clients = clients;
-//    }
-
     public ClientState getEtat() {
         return etat;
     }

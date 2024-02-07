@@ -1,16 +1,19 @@
 package com.example.CRM.Controller;
 
-import jakarta.persistence.Column;
+import com.example.CRM.Model.Client;
+import jakarta.persistence.ManyToOne;
 
 public class OrderDTO {
 
+    @ManyToOne
+    private Integer client;
     private Integer id;
 
 //    @ManyToMany
 //    List<Client> clients = new ArrayList<>();
     private String typePrestation;
     private String description;
-    private Integer clientId;
+//    private Client client;
     private short nbJours;
     private Integer prixUnitaire;
     private Integer totalHT;
@@ -20,10 +23,20 @@ public class OrderDTO {
     public OrderDTO() {
     }
 
-    public OrderDTO(String typePrestation, String description, Integer clientId, short nbJours, Integer prixUnitaire, OrderState etat) {
+//    public OrderDTO(String typePrestation, String description, Integer client, short nbJours, Integer prixUnitaire, OrderState etat) {
+//        this.typePrestation = typePrestation;
+//        this.description = description;
+//        this.client = client;
+//        this.nbJours = nbJours;
+//        this.prixUnitaire = prixUnitaire;
+//        this.etat = etat;
+//    }
+
+
+    public OrderDTO( String typePrestation, String description, Integer client, short nbJours, Integer prixUnitaire, OrderState etat) {
+        this.client = client;
         this.typePrestation = typePrestation;
         this.description = description;
-        this.clientId = clientId;
         this.nbJours = nbJours;
         this.prixUnitaire = prixUnitaire;
         this.etat = etat;
@@ -49,16 +62,16 @@ public class OrderDTO {
         return description;
     }
 
+    public Integer getClient() {
+        return client;
+    }
+
+    public void setClient(Integer client) {
+        this.client = client;
+    }
+
     public void setDescription(String description) {
         this.description = description;
-    }
-
-    public Integer getClientId() {
-        return clientId;
-    }
-
-    public void setClientId(Integer clientId) {
-        this.clientId = clientId;
     }
 
     public short getNbJours() {
@@ -107,7 +120,7 @@ public class OrderDTO {
                 "id=" + id +
                 ", typePrestation='" + typePrestation + '\'' +
                 ", description='" + description + '\'' +
-                ", clientId=" + clientId +
+                ", client=" + client +
                 ", nbJours=" + nbJours +
                 ", prixUnitaire=" + prixUnitaire +
                 ", totalHT=" + totalHT +
